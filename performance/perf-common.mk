@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := $(call my-dir)
+
 # perf blobs
 PRODUCT_PACKAGES += \
     libqti-perfd-client_system \
@@ -34,9 +36,9 @@ PRODUCT_BOOT_JARS += \
     UxPerformance
 
 PRODUCT_COPY_FILES += \
-    vendor/qcom/common/performance/proprietary/bin/perfservice:$(TARGET_COPY_OUT_SYSTEM)/bin/perfservice \
-    vendor/qcom/common/performance/proprietary/etc/init/perfservice.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/perfservice.rc \
-    vendor/qcom/common/performance/proprietary/etc/perf/wlc_model.tflite:$(TARGET_COPY_OUT_SYSTEM)/etc/perf/wlc_model.tflite
+    vendor/qcom/common/performance/bin/perfservice:$(TARGET_COPY_OUT_SYSTEM)/bin/perfservice \
+    vendor/qcom/common/performance/etc/init/perfservice.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/perfservice.rc \
+    vendor/qcom/common/performance/etc/perf/wlc_model.tflite:$(TARGET_COPY_OUT_SYSTEM)/etc/perf/wlc_model.tflite
 
 # IOP and Workload Classifier props
 PRODUCT_PROPERTY_OVERRIDES += \
