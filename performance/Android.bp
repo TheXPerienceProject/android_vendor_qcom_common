@@ -40,6 +40,21 @@ prebuilt_etc {
 }
 
 cc_prebuilt_library_shared {
+    name: "libdolphin",
+    owner: "qti",
+    multilib: {
+        lib64: {
+            srcs: ["lib64/libdolphin.so"],
+        },
+        lib32: {
+            srcs: ["lib/libdolphin.so"],
+        },
+    },
+    compile_multilib: "both",
+
+}
+
+cc_prebuilt_library_shared {
     name: "libqti-at",
     owner: "qti",
     multilib: {
@@ -156,4 +171,14 @@ cc_prebuilt_library_shared {
     compile_multilib: "both",
     product_specific: true,
 
+}
+
+android_app_import {
+	name: "workloadclassifier",
+	owner: "qti",
+	apk: "app/workloadclassifier/workloadclassifier.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
 }

@@ -17,6 +17,7 @@ LOCAL_PATH := $(call my-dir)
 
 # perf blobs
 PRODUCT_PACKAGES += \
+    libdolphin \
     libqti-perfd-client_system \
     libqti-iopd-client_system \
     libqti-util_system \
