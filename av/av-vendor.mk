@@ -1,3 +1,4 @@
+
 # Copyright (C) 2019-2020 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,5 +28,4 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    vendor.qti.hardware.audiohalext@1.0 \
     libqct_resampler
