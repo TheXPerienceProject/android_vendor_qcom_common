@@ -64,7 +64,6 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/perf/proprietary/system_ext/lib64/vendor.qti.qspmhal@1.0.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/vendor.qti.qspmhal@1.0.so
 
 PRODUCT_PACKAGES += \
-    libtflite \
     PerformanceMode \
     workloadclassifier \
     QPerformance \
