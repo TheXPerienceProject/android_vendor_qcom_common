@@ -134,6 +134,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.memory.pasrmanager@1.0-service
 
 # Boot Jars
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
+#PRODUCT_BOOT_JARS += \
+#    QPerformance \
+#    UxPerformance
