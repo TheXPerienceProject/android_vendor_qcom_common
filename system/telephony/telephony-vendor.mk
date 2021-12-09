@@ -138,10 +138,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     DeviceInfo \
     DynamicDDSService \
+    ImsRcsService \
     QTIDiagServices \
     QtiTelephonyService \
     SimContact \
     atfwd \
+    datastatusnotification \
     embms \
     imssettings \
     uceShimService \
