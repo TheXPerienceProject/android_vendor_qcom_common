@@ -47,7 +47,5 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/vendor/media/proprietary/vendor/lib64/libvideooptfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvideooptfeature.so \
     vendor/qcom/common/vendor/media/proprietary/vendor/lib64/vendor.qti.hardware.qconfig@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.qconfig@1.0.so
 
-ifneq ($(TARGET_HAS_DOLBY_VISION),true)
 PRODUCT_PACKAGES += \
-    c2_manifest_vendor
-endif
+    c2_manifest_vendor_caf
