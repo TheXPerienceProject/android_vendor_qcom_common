@@ -51,5 +51,8 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/vendor/media-5.4/proprietary/vendor/lib64/libvideooptfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvideooptfeature.so \
     vendor/qcom/common/vendor/media-5.4/proprietary/vendor/lib64/vendor.qti.hardware.qconfig@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.qconfig@1.0.so
 
+ifneq (,$(filter lisa,$(TARGET_DEVICE)))
+$(warning "disable c2_manifest_vendor from vendor/qcom/common/vendor/media-5.4")
 PRODUCT_PACKAGES += \
-    c2_manifest_vendor
+    c2_manifest_vendor_media
+endif
