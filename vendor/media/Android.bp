@@ -15,7 +15,7 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "c2_manifest_vendor_audio",
+	name: "c2_manifest_vendor_audio_clo",
 	owner: "qcom/common",
 	src: "proprietary/vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml",
 	filename_from_src: true,
