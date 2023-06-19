@@ -89,5 +89,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     c2_manifest_vendor_caf \
-    c2_manifest_vendor_audio \
     vendor.qti.hardware.qconfig@1.0-service
+
+ifneq (,$(filter mondrian,$(TARGET_DEVICE)))
+PRODUCT_PACKAGES += \
+    c2_manifest_vendor_audio
+else
+$(warning "disable c2_manifest_vendor_audio on dolby atmos device")
+endif
