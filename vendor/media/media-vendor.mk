@@ -91,9 +91,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qconfig@1.0-service
 
 ifneq ($(TARGET_HAS_DOLBY_ATMOS), true)
-PRODUCT_PACKAGES += \
 $(warning "This target doesn't support dms enabling CLO c2_manifest_vendor_audio ")
+PRODUCT_PACKAGES += \
     c2_manifest_vendor_audio_clo
 else
 $(warning "disable c2_manifest_vendor_audio on dolby atmos device")
+
 endif
