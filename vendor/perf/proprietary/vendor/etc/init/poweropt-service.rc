@@ -9,6 +9,6 @@
 #  ---------------------------------------------------------------------------
 service poweropt-service /vendor/bin/poweropt-service
     class hal
-    user system
+    user root
     group system readproc
 
