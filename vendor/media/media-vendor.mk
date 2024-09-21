@@ -52,8 +52,16 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/vendor/media/proprietary/vendor/lib64/vendor.qti.hardware.vpp@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.vpp@1.2.so \
     vendor/qcom/common/vendor/media/proprietary/vendor/lib64/vendor.qti.hardware.vpp@1.3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.vpp@1.3.so
 
+ifneq ($(TARGET_HAS_DOLBY_VISION), true)
+$(warning "This target doesn't support dolby vision so disable it ")
 PRODUCT_PACKAGES += \
-    c2_manifest_vendor_caf \
+    c2_manifest_vendor_caf
+else
+$(warning "This target support Dolby vision do nothing with oss c2_manifest_vendor")
+
+endif
+
+PRODUCT_PACKAGES += \
     vendor.qti.hardware.qconfig@1.0-service
 
 ifneq ($(TARGET_HAS_DOLBY_ATMOS), true)
