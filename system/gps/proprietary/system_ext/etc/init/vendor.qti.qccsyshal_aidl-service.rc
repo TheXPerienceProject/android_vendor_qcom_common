@@ -10,7 +10,10 @@
 on init && property:ro.boot.product.vendor.sku=sun
     enable qccsyshal_aidl-service
 
-on post-fs-data && property:ro.boot.product.vendor.sku=sun
+on init && property:ro.boot.product.vendor.sku=parrot
+    enable qccsyshal_aidl-service
+
+on post-fs-data
     mkdir /dev/socket/qcc_app 0770 system misc
     chmod 2770 /dev/socket/qcc_app
     mkdir /data/misc/qcc 0770 system misc
