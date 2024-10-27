@@ -4,7 +4,602 @@
 
 soong_namespace {
 	imports: [
+        "vendor/qcom/common/system/alarm",
+        "vendor/qcom/common/system/audio",
+        "vendor/qcom/common/system/av",
+        "vendor/qcom/common/system/bt",
+        "vendor/qcom/common/system/display",
+        "vendor/qcom/common/system/gps",
+        "vendor/qcom/common/system/perf",
+        "vendor/qcom/common/system/telephony",
+        "vendor/qcom/common/system/wfd",
 	],
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.MemHal-V1-ndk",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system/lib/vendor.qti.MemHal-V1-ndk.so"],
+			shared_libs: ["libbinder_ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system/lib64/vendor.qti.MemHal-V1-ndk.so"],
+			shared_libs: ["libbinder_ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.perf2-V1-ndk",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system/lib/vendor.qti.hardware.perf2-V1-ndk.so"],
+			shared_libs: ["libbinder_ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system/lib64/vendor.qti.hardware.perf2-V1-ndk.so"],
+			shared_libs: ["libbinder_ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libbeluga",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libbeluga.so"],
+			shared_libs: ["libbase", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libbeluga.so"],
+			shared_libs: ["libbase", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libcomposerextn.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libcomposerextn.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libutils", "libui", "libsync", "libhidlbase", "libdisplayconfig.system.qti", "libtinyxml2", "vendor.qti.hardware.limits@1.0", "vendor.qti.hardware.limits@1.1", "android.hardware.thermal-V2-ndk", "libbinder", "libbinder_ndk", "vendor.qti.hardware.display.config-V12-ndk", "libgralloc.system.qti", "libvndksupport", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libcomposerextn.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libutils", "libui", "libsync", "libhidlbase", "libdisplayconfig.system.qti", "libtinyxml2", "vendor.qti.hardware.limits@1.0", "vendor.qti.hardware.limits@1.1", "android.hardware.thermal-V2-ndk", "libbinder", "libbinder_ndk", "vendor.qti.hardware.display.config-V12-ndk", "libgralloc.system.qti", "libvndksupport", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdolphin",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libdolphin.so"],
+			shared_libs: ["libbinder", "libcutils", "libgui", "liblog", "libutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libdolphin.so"],
+			shared_libs: ["libbinder", "libcutils", "libgui", "liblog", "libutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblayerext.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/liblayerext.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libutils", "libtinyxml2", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/liblayerext.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libutils", "libtinyxml2", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libpenguin",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libpenguin.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libpenguin.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libpenguin_impl",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libpenguin_impl.so"],
+			shared_libs: ["libbinder", "libcutils", "libgui", "liblog", "libui", "libutils", "libandroid", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libpenguin_impl.so"],
+			shared_libs: ["libbinder", "libcutils", "libgui", "liblog", "libui", "libutils", "libandroid", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqape.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqape.qti.so"],
+			shared_libs: ["libnativehelper", "libcutils", "libutils", "liblog", "libbinder", "libhidlbase", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqape.qti.so"],
+			shared_libs: ["libnativehelper", "libcutils", "libutils", "liblog", "libbinder", "libhidlbase", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqspm-mem-utils",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqspm-mem-utils.so"],
+			shared_libs: ["vendor.qti.qspmhal-V1-ndk", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqspm-mem-utils.so"],
+			shared_libs: ["vendor.qti.qspmhal-V1-ndk", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqspmsvc",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqspmsvc.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libbinder", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqspmsvc.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libbinder", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqti-MemHal-client-system",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqti-MemHal-client-system.so"],
+			shared_libs: ["liblog", "libcutils", "libbase", "libutils", "libbinder_ndk", "vendor.qti.MemHal-V1-ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqti-MemHal-client-system.so"],
+			shared_libs: ["liblog", "libcutils", "libbase", "libutils", "libbinder_ndk", "vendor.qti.MemHal-V1-ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqti-at",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqti-at.so"],
+			shared_libs: ["libcutils", "libutils", "liblog", "libxml2", "libqti-perfd-client_system", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqti-at.so"],
+			shared_libs: ["libcutils", "libutils", "liblog", "libxml2", "libqti-perfd-client_system", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqti-iopd-client_system",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqti-iopd-client_system.so"],
+			shared_libs: ["libcutils", "libutils", "libxml2", "liblog", "vendor.qti.hardware.iop@2.0", "libhidlbase", "libqti-perfd-client_system", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqti-iopd-client_system.so"],
+			shared_libs: ["libcutils", "libutils", "libxml2", "liblog", "vendor.qti.hardware.iop@2.0", "libhidlbase", "libqti-perfd-client_system", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqti-perfd-client_system",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqti-perfd-client_system.so"],
+			shared_libs: ["libcutils", "libutils", "liblog", "vendor.qti.hardware.perf@2.2", "vendor.qti.hardware.perf@2.3", "vendor.qti.hardware.perf2-V1-ndk", "libhidlbase", "libbase", "libbinder_ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqti-perfd-client_system.so"],
+			shared_libs: ["libcutils", "libutils", "liblog", "vendor.qti.hardware.perf@2.2", "vendor.qti.hardware.perf@2.3", "vendor.qti.hardware.perf2-V1-ndk", "libhidlbase", "libbase", "libbinder_ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqti_performance",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqti_performance.so"],
+			shared_libs: ["libnativehelper", "libcutils", "liblog", "libutils", "libbase", "vendor.qti.hardware.iop@2.0", "libhidlbase", "libqti-perfd-client_system", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqti_performance.so"],
+			shared_libs: ["libnativehelper", "libcutils", "liblog", "libutils", "libbase", "vendor.qti.hardware.iop@2.0", "libhidlbase", "libqti-perfd-client_system", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqti_workloadclassifiermodel",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libqti_workloadclassifiermodel.so"],
+			shared_libs: ["libnativehelper", "libcutils", "liblog", "libutils", "libbase", "libtflite", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqti_workloadclassifiermodel.so"],
+			shared_libs: ["libnativehelper", "libcutils", "liblog", "libutils", "libbase", "libtflite", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libskewknob_system",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libskewknob_system.so"],
+			shared_libs: ["liblog", "libc", "libcutils", "libc++", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libskewknob_system.so"],
+			shared_libs: ["liblog", "libc", "libcutils", "libc++", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libsmomoconfig.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libsmomoconfig.qti.so"],
+			shared_libs: ["libutils", "libbinder", "libcomposerextn.qti", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libsmomoconfig.qti.so"],
+			shared_libs: ["libutils", "libbinder", "libcomposerextn.qti", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.iop@2.0",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.iop@2.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.iop@2.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.limits@1.0",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.limits@1.0.so"],
+			shared_libs: ["android.hardware.thermal@1.0", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.limits@1.0.so"],
+			shared_libs: ["android.hardware.thermal@1.0", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.limits@1.1",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.limits@1.1.so"],
+			shared_libs: ["android.hardware.thermal@1.0", "vendor.qti.hardware.limits@1.0", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.limits@1.1.so"],
+			shared_libs: ["android.hardware.thermal@1.0", "vendor.qti.hardware.limits@1.0", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.perf@2.0",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.perf@2.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.perf@2.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.perf@2.1",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.perf@2.1.so"],
+			shared_libs: ["vendor.qti.hardware.perf@2.0", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.perf@2.1.so"],
+			shared_libs: ["vendor.qti.hardware.perf@2.0", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.perf@2.2",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.perf@2.2.so"],
+			shared_libs: ["vendor.qti.hardware.perf@2.0", "vendor.qti.hardware.perf@2.1", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.perf@2.2.so"],
+			shared_libs: ["vendor.qti.hardware.perf@2.0", "vendor.qti.hardware.perf@2.1", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.perf@2.3",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.perf@2.3.so"],
+			shared_libs: ["vendor.qti.hardware.perf@2.0", "vendor.qti.hardware.perf@2.1", "vendor.qti.hardware.perf@2.2", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.perf@2.3.so"],
+			shared_libs: ["vendor.qti.hardware.perf@2.0", "vendor.qti.hardware.perf@2.1", "vendor.qti.hardware.perf@2.2", "libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.qspmhal-V1-ndk",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.qspmhal-V1-ndk.so"],
+			shared_libs: ["libbinder_ndk", "android.hardware.common-V2-ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.qspmhal-V1-ndk.so"],
+			shared_libs: ["libbinder_ndk", "android.hardware.common-V2-ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.qspmhal@1.0",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.qspmhal@1.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.qspmhal@1.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
 }
 
 android_app_import {
@@ -45,5 +640,39 @@ dex_import {
 	name: "UxPerformance",
 	owner: "qcom/common",
 	jars: ["proprietary/system/framework/UxPerformance.jar"],
+}
+
+cc_prebuilt_binary {
+	name: "perfservice",
+	owner: "qcom/common",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/bin/perfservice"],
+			shared_libs: ["liblog", "libutils", "libbinder", "libavservices_minijail", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "qspmsvc",
+	owner: "qcom/common",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/bin/qspmsvc"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libbinder_ndk", "libbinder", "libbase", "vendor.qti.qspmhal@1.0", "vendor.qti.qspmhal-V1-ndk", "android.hardware.thermal@1.0", "android.hardware.thermal@2.0", "android.hidl.memory@1.0", "libhidlmemory", "libhidlbase", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	system_ext_specific: true,
 }
 

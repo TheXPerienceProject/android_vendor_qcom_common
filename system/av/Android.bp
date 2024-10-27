@@ -4,6 +4,100 @@
 
 soong_namespace {
 	imports: [
+        "vendor/qcom/common/system/alarm",
+        "vendor/qcom/common/system/audio",
+        "vendor/qcom/common/system/av",
+        "vendor/qcom/common/system/bt",
+        "vendor/qcom/common/system/display",
+        "vendor/qcom/common/system/gps",
+        "vendor/qcom/common/system/perf",
+        "vendor/qcom/common/system/telephony",
+        "vendor/qcom/common/system/wfd",
 	],
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmparserextractor",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/extractors/libmmparserextractor.so"],
+			shared_libs: ["libcutils", "liblog", "libmediandk", "libmmparser_lite", "libstagefright_foundation", "libbinder_ndk", "libutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/extractors/libmmparserextractor.so"],
+			shared_libs: ["libcutils", "liblog", "libmediandk", "libmmparser_lite", "libstagefright_foundation", "libbinder_ndk", "libutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	relative_install_path: "extractors",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libavenhancements",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libavenhancements.so"],
+			shared_libs: ["libpermission", "libaudioclient_aidl_conversion", "libandroid_net", "libbase", "libnetd_client", "libbinder", "libcamera_client", "libcutils", "libexpat", "liblog", "libutils", "libz", "libmedia", "libmedia_omx", "libhidlbase", "libstagefright", "libstagefright_codecbase", "libstagefright_httplive", "libmediaplayerservice", "libstagefright_foundation", "libaudioutils", "libaudioclient", "libaudiopolicy", "libnativewindow", "libmedia_helper", "libcrypto", "libhidlmemory", "android.hidl.allocator@1.0", "android.hidl.memory@1.0", "libdatasource", "libnbaio", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libavenhancements.so"],
+			shared_libs: ["libpermission", "libaudioclient_aidl_conversion", "libandroid_net", "libbase", "libnetd_client", "libbinder", "libcamera_client", "libcutils", "libexpat", "liblog", "libutils", "libz", "libmedia", "libmedia_omx", "libhidlbase", "libstagefright", "libstagefright_codecbase", "libstagefright_httplive", "libmediaplayerservice", "libstagefright_foundation", "libaudioutils", "libaudioclient", "libaudiopolicy", "libnativewindow", "libmedia_helper", "libcrypto", "libhidlmemory", "android.hidl.allocator@1.0", "android.hidl.memory@1.0", "libdatasource", "libnbaio", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmosal",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libmmosal.so"],
+			shared_libs: ["libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libmmosal.so"],
+			shared_libs: ["libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmmparser_lite",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libmmparser_lite.so"],
+			shared_libs: ["libutils", "libcutils", "liblog", "libmmosal", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libmmparser_lite.so"],
+			shared_libs: ["libutils", "libcutils", "liblog", "libmmosal", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
 }
 

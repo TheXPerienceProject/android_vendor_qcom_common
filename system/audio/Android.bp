@@ -4,13 +4,262 @@
 
 soong_namespace {
 	imports: [
+        "vendor/qcom/common/system/alarm",
+        "vendor/qcom/common/system/audio",
+        "vendor/qcom/common/system/av",
+        "vendor/qcom/common/system/bt",
+        "vendor/qcom/common/system/display",
+        "vendor/qcom/common/system/gps",
+        "vendor/qcom/common/system/perf",
+        "vendor/qcom/common/system/telephony",
+        "vendor/qcom/common/system/wfd",
 	],
+}
+
+cc_prebuilt_library_shared {
+	name: "libbinauralrenderer_wrapper.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libbinauralrenderer_wrapper.qti.so"],
+			shared_libs: ["libvr_amb_engine", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libbinauralrenderer_wrapper.qti.so"],
+			shared_libs: ["libvr_amb_engine", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libhoaeffects.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libhoaeffects.qti.so"],
+			shared_libs: ["libhoaeffects_csim", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libhoaeffects.qti.so"],
+			shared_libs: ["libhoaeffects_csim", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libhoaeffects_csim",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libhoaeffects_csim.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libhoaeffects_csim.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblistenjni.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/liblistenjni.qti.so"],
+			shared_libs: ["libutils", "liblog", "liblistensoundmodel2.qti", "liblsmclient", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/liblistenjni.qti.so"],
+			shared_libs: ["libutils", "liblog", "liblistensoundmodel2.qti", "liblsmclient", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblistensoundmodel2.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/liblistensoundmodel2.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/liblistensoundmodel2.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblsmclient",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/liblsmclient.so"],
+			shared_libs: ["libhidlbase", "libutils", "liblog", "libcutils", "libhardware", "libbase", "android.hidl.allocator@1.0", "android.hidl.memory@1.0", "libhidlmemory", "vendor.qti.hardware.ListenSoundModel@1.0", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/liblsmclient.so"],
+			shared_libs: ["libhidlbase", "libutils", "liblog", "libcutils", "libhardware", "libbase", "android.hidl.allocator@1.0", "android.hidl.memory@1.0", "libhidlmemory", "vendor.qti.hardware.ListenSoundModel@1.0", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libvr_amb_engine",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libvr_amb_engine.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libvr_amb_engine.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libvr_object_engine",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/libvr_object_engine.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libvr_object_engine.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.ListenSoundModel@1.0",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/vendor.qti.hardware.ListenSoundModel@1.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqxrsplitauxservice.qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libqxrsplitauxservice.qti.so"],
+			shared_libs: ["libutils", "libcutils", "libaudioclient", "libaudiofoundation", "audioclient-types-aidl-cpp", "android.media.audio.common.types-V3-cpp", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.qxr-V1-ndk_platform",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.qxr-V1-ndk_platform.so"],
+			shared_libs: ["libbinder_ndk", "android.hardware.common-V2-ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
 }
 
 dex_import {
 	name: "audiosphere",
 	owner: "qcom/common",
 	jars: ["proprietary/system_ext/framework/audiosphere.jar"],
+	system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "qxrsplitauxservice",
+	owner: "qcom/common",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/bin/qxrsplitauxservice"],
+			shared_libs: ["liblog", "libutils", "libbinder_ndk", "libcutils", "libnativewindow", "libavservices_minijail", "vendor.qti.hardware.qxr-V1-ndk_platform", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
 	system_ext_specific: true,
 }
 
