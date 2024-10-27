@@ -5,5 +5,6 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/common/vendor/nfc/nq
 
-PRODUCT_COPY_FILES += \
-    vendor/qcom/common/vendor/nfc/nq/proprietary/vendor/bin/nqnfcinfo:$(TARGET_COPY_OUT_VENDOR)/bin/nqnfcinfo
+
+PRODUCT_PACKAGES += \
+    nqnfcinfo

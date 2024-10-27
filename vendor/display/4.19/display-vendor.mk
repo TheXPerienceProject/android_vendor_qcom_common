@@ -5,20 +5,16 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/common/vendor/display/4.19
 
-PRODUCT_COPY_FILES += \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib/libqseed3.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqseed3.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib/libsdm-color.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdm-color.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib/libsdm-diag.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdm-diag.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib/libsdm-disp-vndapis.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdm-disp-vndapis.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib/libtinyxml2_1.so:$(TARGET_COPY_OUT_VENDOR)/lib/libtinyxml2_1.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libdisplayqos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdisplayqos.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libdisplayskuutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdisplayskuutils.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libhdr_tm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhdr_tm.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libqrtr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libqrtr.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libqseed3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libqseed3.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libsdm-color.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-color.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libsdm-colormgr-algo.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-colormgr-algo.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libsdm-diag.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-diag.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libsdm-disp-vndapis.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-disp-vndapis.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libsdmextension.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdmextension.so \
-    vendor/qcom/common/vendor/display/4.19/proprietary/vendor/lib64/libtinyxml2_1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtinyxml2_1.so
+
+PRODUCT_PACKAGES += \
+    libqseed3 \
+    libsdm-color \
+    libsdm-diag \
+    libsdm-disp-vndapis \
+    libtinyxml2_1 \
+    libdisplayqos \
+    libdisplayskuutils \
+    libhdr_tm \
+    libqrtr \
+    libsdm-colormgr-algo \
+    libsdmextension

@@ -4,6 +4,216 @@
 
 soong_namespace {
 	imports: [
+        "hardware/qcom/display",
+        "hardware/qcom/display/gralloc",
+        "hardware/qcom/display/libdebug",
+        "hardware/qcom/wlan/qcwcn",
+        "vendor/qcom/common/vendor/adreno-5xx",
+        "vendor/qcom/common/vendor/adreno-r",
+        "vendor/qcom/common/vendor/adreno-s",
+        "vendor/qcom/common/vendor/adreno-t",
+        "vendor/qcom/common/vendor/adreno-u",
+        "vendor/qcom/common/vendor/alarm",
+        "vendor/qcom/common/vendor/charging",
+        "vendor/qcom/common/vendor/display",
+        "vendor/qcom/common/vendor/display/4.19",
+        "vendor/qcom/common/vendor/display/5.10",
+        "vendor/qcom/common/vendor/display/5.15",
+        "vendor/qcom/common/vendor/display/5.4",
+        "vendor/qcom/common/vendor/dsprpcd",
+        "vendor/qcom/common/vendor/gps-legacy",
+        "vendor/qcom/common/vendor/keymaster",
+        "vendor/qcom/common/vendor/media-5.4",
+        "vendor/qcom/common/vendor/media-legacy",
+        "vendor/qcom/common/vendor/media",
+        "vendor/qcom/common/vendor/nfc/nq",
+        "vendor/qcom/common/vendor/perf",
+        "vendor/qcom/common/vendor/qseecomd-legacy",
+        "vendor/qcom/common/vendor/qseecomd",
+        "vendor/qcom/common/vendor/wlan-legacy",
+        "vendor/qcom/common/vendor/wlan",
 	],
+}
+
+cc_prebuilt_library_shared {
+	name: "android.hardware.gatekeeper@1.0-impl-qti",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so"],
+			shared_libs: ["android.hardware.gatekeeper@1.0", "libhidlbase", "libutils", "liblog", "libcutils", "libkeymasterdeviceutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so"],
+			shared_libs: ["android.hardware.gatekeeper@1.0", "libhidlbase", "libutils", "liblog", "libcutils", "libkeymasterdeviceutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	relative_install_path: "hw",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libkeymasterdeviceutils",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libkeymasterdeviceutils.so"],
+			shared_libs: ["libion", "libcutils", "liblog", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libkeymasterdeviceutils.so"],
+			shared_libs: ["libion", "libcutils", "liblog", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libkeymasterprovision",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libkeymasterprovision.so"],
+			shared_libs: ["liblog", "libcrypto", "libkeymasterdeviceutils", "libkeymasterutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libkeymasterprovision.so"],
+			shared_libs: ["liblog", "libcrypto", "libkeymasterdeviceutils", "libkeymasterutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libkeymasterutils",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libkeymasterutils.so"],
+			shared_libs: ["libcutils", "liblog", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libkeymasterutils.so"],
+			shared_libs: ["libcutils", "liblog", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqtikeymaster4",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libqtikeymaster4.so"],
+			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libutils", "libcutils", "libkeymasterdeviceutils", "libkeymasterutils", "libbase", "android.hardware.keymaster@4.0", "android.hardware.keymaster@4.1", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libqtikeymaster4.so"],
+			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libutils", "libcutils", "libkeymasterdeviceutils", "libkeymasterutils", "libbase", "android.hardware.keymaster@4.0", "android.hardware.keymaster@4.1", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqcbor",
+	owner: "qcom/common",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libqcbor.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "android.hardware.gatekeeper@1.0-service-qti",
+	owner: "qcom/common",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti"],
+			shared_libs: ["android.hardware.gatekeeper@1.0", "libhardware", "libhidlbase", "libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	relative_install_path: "hw",
+	soc_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "android.hardware.keymaster@4.0-service-qti",
+	owner: "qcom/common",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/hw/android.hardware.keymaster@4.0-service-qti"],
+			shared_libs: ["liblog", "libcutils", "libbase", "libutils", "libhardware", "libhidlbase", "android.hardware.keymaster@4.0", "libqtikeymaster4", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	relative_install_path: "hw",
+	soc_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "android.hardware.keymaster@4.1-service-qti",
+	owner: "qcom/common",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/hw/android.hardware.keymaster@4.1-service-qti"],
+			shared_libs: ["liblog", "libcutils", "libbase", "libutils", "libhardware", "libhidlbase", "android.hardware.keymaster@4.0", "android.hardware.keymaster@4.1", "libqtikeymaster4", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	relative_install_path: "hw",
+	soc_specific: true,
 }
 

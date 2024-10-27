@@ -6,8 +6,10 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/common/vendor/alarm
 
 PRODUCT_COPY_FILES += \
-    vendor/qcom/common/vendor/alarm/proprietary/vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.qti.hardware.alarm@1.0-service \
-    vendor/qcom/common/vendor/alarm/proprietary/vendor/bin/power_off_alarm:$(TARGET_COPY_OUT_VENDOR)/bin/power_off_alarm \
-    vendor/qcom/common/vendor/alarm/proprietary/vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.alarm@1.0-service.rc \
-    vendor/qcom/common/vendor/alarm/proprietary/vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so \
-    vendor/qcom/common/vendor/alarm/proprietary/vendor/lib64/vendor.qti.hardware.alarm@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.alarm@1.0.so
+    vendor/qcom/common/vendor/alarm/proprietary/vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.alarm@1.0-impl \
+    vendor.qti.hardware.alarm@1.0 \
+    vendor.qti.hardware.alarm@1.0-service \
+    power_off_alarm
