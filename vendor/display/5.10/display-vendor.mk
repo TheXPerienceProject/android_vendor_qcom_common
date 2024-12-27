@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     libdisplayqos \
     libdisplayskuutils \
     libdpps \
+    libgame_enhance \
     libhdr_backlight_adapter \
     libhdr_tm \
     libmemutils \

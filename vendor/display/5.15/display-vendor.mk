@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
     libdisplayskuutils \
     libdpps \
     libfeutils \
+    libgame_enhance \
     libhdr_backlight_adapter \
     libhdr_tm \
     libintervmipc \

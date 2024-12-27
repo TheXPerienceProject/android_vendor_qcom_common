@@ -19,7 +19,6 @@ PRODUCT_PACKAGES += \
     libaodoptfeature \
     libapengine \
     libappclassifier \
-    libgame_enhance \
     libgamepoweroptfeature \
     liblearningmodule \
     liblightninglaunches \
