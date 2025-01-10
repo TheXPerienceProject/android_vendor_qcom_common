@@ -12,5 +12,13 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/bt/proprietary/system_ext/lib64/libaptXHD_encoder.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libaptXHD_encoder.so \
     vendor/qcom/common/system/bt/proprietary/system_ext/lib64/libaptX_encoder.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libaptX_encoder.so
 
+PRODUCT_COPY_FILES += \
+    vendor/qcom/common/system/bt/proprietary/system_ext/etc/permissions/privapp-permissions-aptxals.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-aptxals.xml \
+    vendor/qcom/common/system/bt/proprietary/system_ext/etc/permissions/privapp-permissions-aptxui.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-aptxui.xml
+
 PRODUCT_PACKAGES += \
+    aptxacu \
+    aptxals \
+    aptxui \
+    aptxalsOverlayCreateProject \
     BluetoothDsDaService
