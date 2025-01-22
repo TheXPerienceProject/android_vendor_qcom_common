@@ -13,6 +13,8 @@ soong_namespace {
         "vendor/qcom/common/system/perf",
         "vendor/qcom/common/system/telephony",
         "vendor/qcom/common/system/wfd",
+        "vendor/qcom/opensource/commonsys-intf/display",
+        "vendor/qcom/opensource/commonsys/display",
 	],
 }
 

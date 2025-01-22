@@ -27,7 +27,8 @@ soong_namespace {
         "vendor/qcom/common/vendor/qseecomd-legacy",
         "vendor/qcom/common/vendor/qseecomd",
         "vendor/qcom/common/vendor/wlan-legacy",
-        "vendor/qcom/common/vendor/wlan",
+        "vendor/qcom/opensource/display",
+        "hardware/qcom-caf/sm8350",
 	],
 }
 

@@ -28,6 +28,9 @@ soong_namespace {
         "vendor/qcom/common/vendor/qseecomd",
         "vendor/qcom/common/vendor/wlan-legacy",
         "vendor/qcom/common/vendor/wlan",
+        "vendor/qcom/opensource/commonsys-intf/display",
+        "vendor/qcom/opensource/commonsys/display",
+        "vendor/qcom/opensource/display",
 	],
 }
 
