@@ -29,7 +29,7 @@ soong_namespace {
         "vendor/qcom/common/vendor/wlan-legacy",
         "vendor/qcom/common/vendor/wlan",
         "vendor/qcom/opensource/display",
-        "hardware/qcom/sm8150/display",
+        "hardware/qcom-caf/sm8350",
 	],
 }
 
