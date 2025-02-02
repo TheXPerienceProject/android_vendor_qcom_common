@@ -7,18 +7,6 @@
 #on post-fs-data
 #    start qccsyshal_aidl-service
 
-on init && property:ro.boot.product.vendor.sku=sun
-    enable qccsyshal_aidl-service
-
-on init && property:ro.boot.product.vendor.sku=parrot
-    enable qccsyshal_aidl-service
-
-on init && property:ro.boot.product.vendor.sku=ravelin
-    enable qccsyshal_aidl-service
-
-on init && property:ro.boot.product.vendor.sku=tuna
-    enable qccsyshal_aidl-service
-
 on post-fs-data
     mkdir /dev/socket/qcc_app 0770 system misc
     chmod 2770 /dev/socket/qcc_app
@@ -56,8 +44,10 @@ on property:vendor.qti.qcc.oper.mode=6
     chmod 0660 /data/misc/qcc/conf/qcc.conf
 
 service qccsyshal_aidl-service /system_ext/bin/qccsyshal_aidl-service
-    disabled
     class hal
     user system
     group misc system
     interface aidl vendor.qti.qccsyshal_aidl
+
+on property:hwservicemanager.ready=true
+    stop qccsyshal_aidl-service
