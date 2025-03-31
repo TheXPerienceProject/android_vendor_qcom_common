@@ -21,6 +21,6 @@ PRODUCT_PACKAGES += \
     libvr_object_engine \
     vendor.qti.hardware.ListenSoundModel@1.0 \
     libqxrsplitauxservice.qti \
-    vendor.qti.hardware.qxr-V1-ndk_platform \
+    vendor.qti.hardware.qxr-V1-ndk \
     audiosphere \
     qxrsplitauxservice
