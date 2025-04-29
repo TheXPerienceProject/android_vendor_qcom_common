@@ -5399,6 +5399,15 @@ dex_import {
 }
 
 dex_import {
+    name: "uimlpalibrary",
+    owner: "qcom",
+    jars: [
+        "proprietary/product/framework/uimlpalibrary.jar",
+    ],
+    product_specific: true,
+}
+
+dex_import {
     name: "uimremoteclientlibrary",
     owner: "qcom",
     jars: [
