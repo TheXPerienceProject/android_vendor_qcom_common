@@ -3,35 +3,6 @@
 //
 
 soong_namespace {
-<<<<<<< HEAD
-	imports: [
-        "vendor/qcom/common/vendor/adreno-5xx",
-        "vendor/qcom/common/vendor/adreno-r",
-        "vendor/qcom/common/vendor/adreno-s",
-        "vendor/qcom/common/vendor/adreno-t",
-        "vendor/qcom/common/vendor/adreno-u",
-        "vendor/qcom/common/vendor/alarm",
-        "vendor/qcom/common/vendor/charging",
-        "vendor/qcom/common/vendor/display",
-        "vendor/qcom/common/vendor/display/4.19",
-        "vendor/qcom/common/vendor/display/5.10",
-        "vendor/qcom/common/vendor/display/5.15",
-        "vendor/qcom/common/vendor/display/5.4",
-        "vendor/qcom/common/vendor/dsprpcd",
-        "vendor/qcom/common/vendor/gps-legacy",
-        "vendor/qcom/common/vendor/keymaster",
-        "vendor/qcom/common/vendor/media-5.4",
-        "vendor/qcom/common/vendor/media-legacy",
-        "vendor/qcom/common/vendor/media",
-        "vendor/qcom/common/vendor/nfc/nq",
-        "vendor/qcom/common/vendor/perf",
-        "vendor/qcom/common/vendor/qseecomd-legacy",
-        "vendor/qcom/common/vendor/qseecomd",
-        "vendor/qcom/common/vendor/wlan-legacy",
-        "vendor/qcom/common/vendor/wlan",
-	],
-=======
->>>>>>> c61dfe94 (common: Regenerate with python extract-utils)
 }
 
 cc_prebuilt_binary {
