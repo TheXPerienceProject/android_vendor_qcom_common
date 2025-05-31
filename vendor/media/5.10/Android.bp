@@ -4,9 +4,9 @@
 
 soong_namespace {
     imports: [
-        "hardware/qcom-caf/sm8350/display",
-        "hardware/qcom-caf/sm8350/display/gralloc",
-        "vendor/qcom/common/vendor/media-5.4",
+        "hardware/qcom-caf/sm8450/display",
+        "hardware/qcom-caf/sm8450/display/gralloc",
+        "vendor/qcom/common/vendor/media/5.10",
     ],
 }
 
