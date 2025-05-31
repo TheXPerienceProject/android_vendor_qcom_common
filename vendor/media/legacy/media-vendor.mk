@@ -13,16 +13,12 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/vendor/media/legacy/proprietary/vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext-arm.policy
 
 PRODUCT_PACKAGES += \
-    libMpeg4SwEncoder \
-    libOmxSwVdec \
-    libOmxSwVencMpeg4 \
     libqcodec2_base \
     libqcodec2_basecodec \
     libqcodec2_core \
     libqcodec2_platform \
     libqcodec2_utils \
     libqcodec2_v4l2codec \
-    libswvdec \
     vendor.qti.hardware.vpp@1.1 \
     vendor.qti.hardware.vpp@1.2 \
     vendor.qti.hardware.vpp@1.3 \
@@ -30,5 +26,4 @@ PRODUCT_PACKAGES += \
     libfastcrc \
     libstreamparser \
     libvideoutils \
-    vendor.qti.media.c2@1.0-service \
-    mm-vidc-omx-test
+    vendor.qti.media.c2@1.0-service
