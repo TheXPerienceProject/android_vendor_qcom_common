@@ -6,7 +6,7 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.alarm@1.0-impl",
+    name: "vendor.qti.hardware.alarm-impl",
     owner: "qcom",
     strip: {
         none: true,
@@ -14,16 +14,17 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so",
+                "proprietary/vendor/lib64/hw/vendor.qti.hardware.alarm-impl.so",
             ],
             shared_libs: [
-                "libhidlbase",
                 "libutils",
                 "liblog",
                 "libcutils",
                 "libhardware",
                 "libbase",
-                "vendor.qti.hardware.alarm@1.0",
+                "vendor.qti.hardware.alarm-V1-ndk",
+                "libbinder",
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -38,7 +39,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.alarm@1.0",
+    name: "vendor.qti.hardware.alarm-V1-ndk",
     owner: "qcom",
     strip: {
         none: true,
@@ -46,13 +47,10 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.alarm@1.0.so",
+                "proprietary/vendor/lib64/vendor.qti.hardware.alarm-V1-ndk.so",
             ],
             shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -65,22 +63,35 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+prebuilt_etc_xml {
+    name: "vendor.qti.hardware.alarm.xml",
+    owner: "qcom",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.alarm.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
 cc_prebuilt_binary {
-    name: "vendor.qti.hardware.alarm@1.0-service",
+    name: "vendor.qti.hardware.alarm-service",
     owner: "qcom",
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service",
+                "proprietary/vendor/bin/hw/vendor.qti.hardware.alarm-service",
             ],
             shared_libs: [
                 "liblog",
                 "libcutils",
                 "libbase",
                 "libutils",
+                "libbinder",
                 "libhardware",
                 "libhidlbase",
-                "vendor.qti.hardware.alarm@1.0",
+                "libbinder_ndk",
+                "libavservices_minijail",
+                "vendor.qti.hardware.alarm-impl",
+                "vendor.qti.hardware.alarm-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
