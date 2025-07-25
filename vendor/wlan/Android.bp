@@ -6,7 +6,7 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.wifi.wifilearner@1.0",
+    name: "vendor.qti.hardware.wifi.wifilearner-V1-ndk",
     owner: "qcom",
     strip: {
         none: true,
@@ -14,13 +14,10 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so",
+                "proprietary/vendor/lib64/vendor.qti.hardware.wifi.wifilearner-V1-ndk.so",
             ],
             shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -30,6 +27,15 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     prefer: true,
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "vendor.qti.hardware.wifi.wifilearner-service.xml",
+    owner: "qcom",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.wifi.wifilearner-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
     soc_specific: true,
 }
 
@@ -71,12 +77,12 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/wifilearner",
             ],
             shared_libs: [
-                "vendor.qti.hardware.wifi.wifilearner@1.0",
                 "libbase",
-                "libhidlbase",
                 "libutils",
                 "liblog",
                 "libnl",
+                "vendor.qti.hardware.wifi.wifilearner-V1-ndk",
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
