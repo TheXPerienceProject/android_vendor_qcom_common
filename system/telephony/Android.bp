@@ -1185,6 +1185,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libz",
+                "libexpat",
                 "libjsoncpp",
                 "libxml2",
                 "liblog",
