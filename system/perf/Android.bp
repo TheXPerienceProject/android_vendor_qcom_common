@@ -238,6 +238,90 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libjpegdecoder_ext",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/libjpegdecoder_ext.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libjpeg",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libjpegdecoder_ext.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libjpeg",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjpegencoder_ext",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/libjpegencoder_ext.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libjpeg",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libjpegencoder_ext.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libjpeg",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "liblayerext.qti",
     owner: "qcom",
     strip: {

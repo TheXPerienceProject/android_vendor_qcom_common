@@ -278,9 +278,20 @@
                     <Wifi>0</Wifi>
                     <NoSP>0</NoSP>
                 </HIDInputPaths>
+                <!--  Supported HIDC input events  -->
+                <CustomHIDCInputPaths>
+                    <Infrared>0</Infrared>
+                    <USB>3</USB>
+                    <BT>0</BT>
+                    <Zigbee>0</Zigbee>
+                    <Wifi>0</Wifi>
+                    <NoSP>0</NoSP>
+                </CustomHIDCInputPaths>
             </InputEvents>
             <!--  TCP port on which UIBC connection established -->
             <TcpPort>4321</TcpPort>
+            <!-- 0/1 - support Custome HIDC or not -->
+            <CustomAppUIBCSupport>0</CustomAppUIBCSupport>
         </UIBC>
     </Capability>
 
@@ -746,11 +757,11 @@
 
     <!--
         Compensation delay for audio
-        This is maintain good AV sync in the mux TS A + V stream.
-        Recommended value is 150us arrived at this number after fine tuning.
-        OEMs can change this value in case they want.
+        This is maintain good AV sync in the mux TS A + V stream Recommended
+        value is 150 msec arrived at this number after fine tuning OEMs can
+        change this value in case they want
     -->
-    <AudioAVSyncDelayUs>-150</AudioAVSyncDelayUs>
+    <AudioAVSyncDelay>-150</AudioAVSyncDelay>
 
     <!--
         To disable/enable AV Sync - 1 or 0

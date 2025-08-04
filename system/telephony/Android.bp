@@ -669,7 +669,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.imsrtpservice@3.1",
                 "libbinder",
                 "libbinder_ndk",
-                "vendor.qti.ImsRtpService-V1-ndk",
+                "vendor.qti.ImsRtpService-V2-ndk",
                 "libdiag_system",
                 "libcutils",
                 "libutils",
@@ -1131,9 +1131,41 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libmink-sock-native-api.so",
             ],
             shared_libs: [
+                "libminkipcbinder_system",
                 "liblog",
                 "libminksocket_system",
                 "libjnihelpers",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libminkipcbinder_system",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libminkipcbinder_system.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libbinder_ndk",
+                "vendor.qti.hardware.minkipcbinder-V1-ndk",
+                "libbinder",
+                "libjsoncpp",
                 "libc++",
                 "libc",
                 "libm",
@@ -1387,6 +1419,32 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.ImsRtpService-V2-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.data.dmapconsent-V1-ndk",
     owner: "qcom",
     strip: {
@@ -1396,6 +1454,31 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/system_ext/lib64/vendor.qti.data.dmapconsent-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.data.dmapconsent-V2-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.data.dmapconsent-V2-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -1889,6 +1972,39 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.data.factoryservice-V2-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.data.factoryservice-V2-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "vendor.qti.hardware.data.dynamicddsaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.qmiaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.lceaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.flowaidlservice-V1-ndk",
+                "vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk",
+                "vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk",
+                "vendor.qti.latencyaidlservice-V1-ndk",
+                "vendor.qti.data.mwqemaidlservice-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.data.mwqem@1.0",
     owner: "qcom",
     strip: {
@@ -2262,6 +2378,32 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/system_ext/lib64/vendor.qti.hardware.data.cneaidlservice.internal.server-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -2959,6 +3101,32 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.minkipcbinder-V1-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.minkipcbinder-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -4275,6 +4443,31 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/system_ext/lib64/vendor.qti.ims.datachannelservice-V2-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.datachannelservice-V3-ndk",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.ims.datachannelservice-V3-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -5625,6 +5818,15 @@ dex_import {
 }
 
 dex_import {
+    name: "vendor.qti.data.dmapconsent-V2-java",
+    owner: "qcom",
+    jars: [
+        "proprietary/system_ext/framework/vendor.qti.data.dmapconsent-V2-java.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "vendor.qti.data.factory-V1.0-java",
     owner: "qcom",
     jars: [
@@ -5719,6 +5921,15 @@ dex_import {
     owner: "qcom",
     jars: [
         "proprietary/system_ext/framework/vendor.qti.data.factoryservice-V1-java.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.data.factoryservice-V2-java",
+    owner: "qcom",
+    jars: [
+        "proprietary/system_ext/framework/vendor.qti.data.factoryservice-V2-java.jar",
     ],
     system_ext_specific: true,
 }
@@ -5836,6 +6047,15 @@ dex_import {
     owner: "qcom",
     jars: [
         "proprietary/system_ext/framework/vendor.qti.hardware.data.cneaidlservice.internal.server-V1-java.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.hardware.data.cneaidlservice.internal.server-V2-java",
+    owner: "qcom",
+    jars: [
+        "proprietary/system_ext/framework/vendor.qti.hardware.data.cneaidlservice.internal.server-V2-java.jar",
     ],
     system_ext_specific: true,
 }
@@ -6151,6 +6371,15 @@ dex_import {
     owner: "qcom",
     jars: [
         "proprietary/system_ext/framework/vendor.qti.ims.datachannelservice-V2-java.jar",
+    ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.ims.datachannelservice-V3-java",
+    owner: "qcom",
+    jars: [
+        "proprietary/system_ext/framework/vendor.qti.ims.datachannelservice-V3-java.jar",
     ],
     system_ext_specific: true,
 }

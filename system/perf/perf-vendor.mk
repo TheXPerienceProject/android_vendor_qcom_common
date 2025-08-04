@@ -19,6 +19,8 @@ PRODUCT_PACKAGES += \
     libbeluga \
     libcomposerextn.qti \
     libdolphin \
+    libjpegdecoder_ext \
+    libjpegencoder_ext \
     liblayerext.qti \
     libpenguin \
     libpenguin_impl \

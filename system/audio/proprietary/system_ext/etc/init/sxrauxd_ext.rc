@@ -1,6 +1,6 @@
 # File: sxrauxd_ext.rc
 #
-# Copyright (c) 2023 Qualcomm Technologies, Inc.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 
@@ -13,8 +13,13 @@ service vendor.sxrauxd /system_ext/bin/qxrsplitauxservice
     user system
     group system
 
+on boot
+    setprop vendor.sxrauxd disable
+    setprop vendor.qvrd.sxrauxd disable
+
 on property:vendor.sxrauxd=enable
     start vendor.sxrauxd
-
-on property:vendor.sxrauxd=disable
+on property:vendor.qvrd.sxrauxd=enable
+    start vendor.sxrauxd
+on property:vendor.qvrd.sxrauxd=disable && property:vendor.sxrauxd=disable
     stop vendor.sxrauxd

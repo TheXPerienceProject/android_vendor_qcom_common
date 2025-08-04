@@ -15,7 +15,6 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 
 PRODUCT_PACKAGES += \
-    liblocsdk_diag_jni \
     libqcc \
     libqcc_file_agent_sys \
     libqcc_netstats \

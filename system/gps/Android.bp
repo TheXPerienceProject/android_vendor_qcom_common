@@ -9,33 +9,6 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
-    name: "liblocsdk_diag_jni",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/liblocsdk_diag_jni.so",
-            ],
-            shared_libs: [
-                "libdiag_system",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libqcc",
     owner: "qcom",
     strip: {

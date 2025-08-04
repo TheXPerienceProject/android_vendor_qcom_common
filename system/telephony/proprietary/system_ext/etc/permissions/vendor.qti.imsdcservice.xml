@@ -6,6 +6,6 @@
 **********************************************************************/
 -->
 <permissions>
-<library name="vendor.qti.ims.datachannelservice-V2-java"
-         file="/system_ext/framework/vendor.qti.ims.datachannelservice-V2-java.jar"/>
+<library name="vendor.qti.ims.datachannelservice-V3-java"
+         file="/system_ext/framework/vendor.qti.ims.datachannelservice-V3-java.jar"/>
 </permissions>

@@ -16,7 +16,8 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/telephony/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml \
     vendor/qcom/common/system/telephony/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml \
     vendor/qcom/common/system/telephony/proprietary/product/etc/permissions/vendor.qti.hardware.data.connectionaidl-V1-java.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/vendor.qti.hardware.data.connectionaidl-V1-java.xml \
-    vendor/qcom/common/system/telephony/proprietary/system_ext/etc/cdma_call_conf.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/cdma_call_conf.xml \
+    vendor/qcom/common/system/telephony/proprietary/system/etc/permissions/uimremoteclient.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/uimremoteclient.xml \
+    vendor/qcom/common/system/telephony/proprietary/system/etc/permissions/uimremoteserver.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/uimremoteserver.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/init/tcmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/tcmd.rc \
@@ -35,7 +36,6 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/permissions/vendor.qti.imsdatachannel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.imsdatachannel.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/permissions/vendor.qti.imsdcservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.imsdcservice.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/seccomp_policy/tcmd.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/tcmd.policy \
-    vendor/qcom/common/system/telephony/proprietary/system_ext/etc/spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/spn-conf.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_telephony_system_packages_config.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
     vendor/qcom/common/system/telephony/proprietary/system_ext/etc/sysconfig/whitelist_com.qualcomm.qti.uceShimService.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/whitelist_com.qualcomm.qti.uceShimService.xml
@@ -79,6 +79,7 @@ PRODUCT_PACKAGES += \
     libimsmedia_jni \
     libjnihelpers \
     libmink-sock-native-api \
+    libminkipcbinder_system \
     libminksocket_system \
     libmsp \
     libmwqemiptablemgr \
@@ -87,7 +88,9 @@ PRODUCT_PACKAGES += \
     libtrigger-handler \
     libupdateprof.qti \
     vendor.qti.ImsRtpService-V1-ndk \
+    vendor.qti.ImsRtpService-V2-ndk \
     vendor.qti.data.dmapconsent-V1-ndk \
+    vendor.qti.data.dmapconsent-V2-ndk \
     vendor.qti.data.factory@1.0 \
     vendor.qti.data.factory@2.0 \
     vendor.qti.data.factory@2.1 \
@@ -99,6 +102,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.data.factory@2.7 \
     vendor.qti.data.factory@2.8 \
     vendor.qti.data.factoryservice-V1-ndk \
+    vendor.qti.data.factoryservice-V2-ndk \
     vendor.qti.data.mwqem@1.0 \
     vendor.qti.data.mwqemaidlservice-V1-ndk \
     vendor.qti.data.slm@1.0 \
@@ -113,6 +117,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk \
     vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk \
     vendor.qti.hardware.data.cneaidlservice.internal.server-V1-ndk \
+    vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk \
     vendor.qti.hardware.data.connection@1.0 \
     vendor.qti.hardware.data.connection@1.1 \
     vendor.qti.hardware.data.connectionfactory-V1-ndk \
@@ -138,6 +143,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.embmssl@1.0 \
     vendor.qti.hardware.embmssl@1.1 \
     vendor.qti.hardware.embmsslaidl-V2-ndk \
+    vendor.qti.hardware.minkipcbinder-V1-ndk \
     vendor.qti.hardware.mwqemadapter@1.0 \
     vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk \
     vendor.qti.hardware.radio.am@1.0 \
@@ -182,6 +188,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.ims.connectionaidlservice-V1-ndk \
     vendor.qti.ims.datachannelservice-V1-ndk \
     vendor.qti.ims.datachannelservice-V2-ndk \
+    vendor.qti.ims.datachannelservice-V3-ndk \
     vendor.qti.ims.factory@1.0 \
     vendor.qti.ims.factory@1.1 \
     vendor.qti.ims.factory@2.0 \
@@ -262,6 +269,7 @@ PRODUCT_PACKAGES += \
     qcrilhook \
     qti-telephony-common \
     vendor.qti.data.dmapconsent-V1-java \
+    vendor.qti.data.dmapconsent-V2-java \
     vendor.qti.data.factory-V1.0-java \
     vendor.qti.data.factory-V2.0-java \
     vendor.qti.data.factory-V2.1-java \
@@ -273,6 +281,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.data.factory-V2.7-java \
     vendor.qti.data.factory-V2.8-java \
     vendor.qti.data.factoryservice-V1-java \
+    vendor.qti.data.factoryservice-V2-java \
     vendor.qti.data.mwqem-V1.0-java \
     vendor.qti.data.mwqemaidlservice-V1-java \
     vendor.qti.data.slm-V1.0-java \
@@ -286,6 +295,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.cneaidlservice.internal.api-V1-java \
     vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-java \
     vendor.qti.hardware.data.cneaidlservice.internal.server-V1-java \
+    vendor.qti.hardware.data.cneaidlservice.internal.server-V2-java \
     vendor.qti.hardware.data.connection-V1.0-java \
     vendor.qti.hardware.data.connection-V1.1-java \
     vendor.qti.hardware.data.connectionfactory-V1-java \
@@ -321,6 +331,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.ims.connectionaidlservice-V1-java \
     vendor.qti.ims.datachannelservice-V1-java \
     vendor.qti.ims.datachannelservice-V2-java \
+    vendor.qti.ims.datachannelservice-V3-java \
     vendor.qti.ims.factory-V1.0-java \
     vendor.qti.ims.factory-V1.1-java \
     vendor.qti.ims.factory-V2.0-java \
