@@ -4,26 +4,15 @@
 
 soong_namespace {
     imports: [
+        "hardware/qcom-caf/sm8350/display",
+        "hardware/qcom-caf/sm8450/display",
+        "hardware/qcom-caf/sm8550/display",
+        "hardware/qcom-caf/sm8650/display",
         "vendor/qcom/common/vendor/display/4.19",
         "vendor/qcom/common/vendor/display/5.10",
         "vendor/qcom/common/vendor/display/5.15",
         "vendor/qcom/common/vendor/display/5.4",
-        "vendor/qcom/common/vendor/dsprpcd",
-        "vendor/qcom/common/vendor/gps-legacy",
-        "vendor/qcom/common/vendor/keymaster",
-        "vendor/qcom/common/vendor/media-5.4",
-        "vendor/qcom/common/vendor/media-legacy",
-        "vendor/qcom/common/vendor/media",
-        "vendor/qcom/common/vendor/nfc/nq",
-        "vendor/qcom/common/vendor/perf",
-        "vendor/qcom/common/vendor/qseecomd-legacy",
-        "vendor/qcom/common/vendor/qseecomd",
-        "vendor/qcom/common/vendor/wlan-legacy",
-        "vendor/qcom/common/vendor/wlan",
-        "vendor/qcom/opensource/commonsys-intf/display",
-        "vendor/qcom/opensource/commonsys/display",
-        "vendor/qcom/opensource/display",
-	],
+    ],
 }
 
 cc_prebuilt_library_shared {
