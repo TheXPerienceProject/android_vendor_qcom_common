@@ -12,6 +12,9 @@ soong_namespace {
         "vendor/qcom/common/vendor/display/5.10",
         "vendor/qcom/common/vendor/display/5.15",
         "vendor/qcom/common/vendor/display/5.4",
+        "vendor/qcom/opensource/commonsys-intf/display",
+        "vendor/qcom/opensource/commonsys/display",
+        "vendor/qcom/opensource/display",
     ],
 }
 
